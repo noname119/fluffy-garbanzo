@@ -1,0 +1,33 @@
+{{#> layout}}
+    {{#content "body"}}
+        <br><br>
+        <div class="card-columns d-flex justify-content-left">
+            <div class="card card-body" style="max-width: 20rem">
+                <h4 class="text-truncate text-center text-fluid">Hello, <b>{{ session.username }}</b>!</h4>
+                <hr class="mt-0">
+                <img class="img-fluid" src="/data/thumbnail/user?id={{ session.id }}" style="width: 300px">
+            </div>
+
+            <div class="w-100 ms-3">
+                <div class="card card-body mb-4">
+                    <div class="card-block">
+                        <div class="md-form input-group m-0">
+                            <input type="text" class="form-control" placeholder="What are you up to?" aria-label="What are you up to?" aria-describedby="share" value="">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary rboxlo-color-2 ms-2 px-3" type="button" id="share">Share</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card-body">
+                    <div class="card-block">
+                        <h4 class="card-title">My Feed</h4>
+                        <hr>
+                        <i>crickets...</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/content}}
+{{/layout}}

@@ -1,0 +1,42 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Rboxlo Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lightbulblighter/Rboxlo.git"
+  },
+  "author": "",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/lightbulblighter/Rboxlo/issues"
+  },
+  "homepage": "https://github.com/lightbulblighter/Rboxlo#readme",
+  "dependencies": {
+    "argon2": "^0.27.1",
+    "body-parser": "^1.19.0",
+    "ciphersweet-js": "^1.4.1",
+    "cookie-parser": "^1.4.5",
+    "cookie-session": "^1.4.0",
+    "crypto": "^1.0.1",
+    "csurf": "^1.11.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
+    "express-rate-limit": "^5.2.6",
+    "fs": "^0.0.1-security",
+    "handlebars-layouts": "^3.1.4",
+    "http-build-query": "^0.7.0",
+    "moment": "^2.29.1",
+    "mysql2": "^2.2.5",
+    "safe-compare": "^1.1.4",
+    "validator": "^10.11.0",
+    "vhost": "^3.0.2",
+    "whatwg-fetch": "^3.6.2",
+    "zxcvbn": "^4.4.2"
+  }
+}

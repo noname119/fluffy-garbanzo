@@ -1,0 +1,41 @@
+{{#> layout}}
+    {{#content "body"}}
+        <br>
+        <div class="card">
+            <div class="card-header">Sign in</div>
+            <div class="card-body">
+                <form id="login-form" method="post">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input id="username" name="username" type="text" class="form-control{{#if objects.form.username}} is-{{#if objects.form.username.invalid}}in{{/if}}valid{{/if}}" required="required">
+                        {{#if objects.form.username.invalid}}
+                        <div class="invalid-feedback">{{ objects.form.username.message }}</div>
+                        {{/if}}
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input id="password" name="password" type="password" class="form-control{{#if objects.form.password}} is-{{#if objects.form.password.invalid}}in{{/if}}valid{{/if}}" required="required">
+                        {{#if objects.form.password.invalid}}
+                        <div class="invalid-feedback">{{ objects.form.password.message }}</div>
+                        {{/if}}
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="true" id="rememberMe" name="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                        </div>
+                    </div>
+                    <input type="hidden" name="_csrf" value="{{ objects.csrf }}">
+                    <button id="submit" class="btn btn-primary{{#if objects.challenge}} g-recaptcha{{/if}}" {{#if objects.challenge}}data-sitekey="{{ rboxlo.GOOGLE_RECAPTCHA_PUBLIC_KEY }}" data-callback="submit"{{else}}type="loginSubmit"{{/if}}>Sign in</button>
+                </form>
+            </div>
+        </div>
+        <br>
+    {{/content}}
+
+    {{#if objects.challenge}}
+        {{#content "scripts" mode="append"}}
+            <script type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script>
+        {{/content}}
+    {{/if}}
+{{/layout}}
